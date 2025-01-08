@@ -23,7 +23,7 @@ receiver: public(address)
 @deploy
 def __init__(admin: address, asset: address, payers: DynArray[address, 25], total_owed: uint256, receiver: address):
     assert len(payers) > 0, "No payers added"
-    assert total_owed >= 4, "Too small to split"
+    assert total_owed >= 100, "Too small to split"
     self.payers = payers
     self.admin = admin
     self.asset = IERC20(asset)
